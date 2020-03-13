@@ -1,0 +1,45 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "ddbbef2e-7d24-4ea3-accf-f5ea24af4a8b++4191",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "ddbbef2e-7d24-4ea3-accf-f5ea24af4a8b++5095" : {
+
+    },
+    "ddbbef2e-7d24-4ea3-accf-f5ea24af4a8b++4191" : {
+
+    },
+    "ddbbef2e-7d24-4ea3-accf-f5ea24af4a8b++5223" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "ddbbef2e-7d24-4ea3-accf-f5ea24af4a8b++5095" : 0,
+    "ddbbef2e-7d24-4ea3-accf-f5ea24af4a8b++4191" : 0,
+    "ddbbef2e-7d24-4ea3-accf-f5ea24af4a8b++5223" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "02CCD4D4-769E-4121-A417-C6EE42F5B270",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "ddbbef2e-7d24-4ea3-accf-f5ea24af4a8b++5095" : "MemoryLeakDetecter\/MemoryLeakDetecter\/",
+    "ddbbef2e-7d24-4ea3-accf-f5ea24af4a8b++4191" : "MemoryLeakDetecter\/",
+    "ddbbef2e-7d24-4ea3-accf-f5ea24af4a8b++5223" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MemoryLeakDetecter",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MemoryLeakDetecter.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/svn.code.mob.com",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ddbbef2e-7d24-4ea3-accf-f5ea24af4a8b++4191"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/svn.code.mob.com",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ddbbef2e-7d24-4ea3-accf-f5ea24af4a8b++5095"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/svn.code.mob.com",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ddbbef2e-7d24-4ea3-accf-f5ea24af4a8b++5223"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RetainCycleList</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+
+<div>
+    <p style="font-size: 30pt; filter: shadow(color=#9370db); width: 100%; color: #ffb9a5; line-height: 150%; font-family: arial; text-align: center">FBMemoryProfile</p>
+</div>
+
+<div>
+    <p style="font-family:arial; font-size:13px; color:gray; text-align: center">
+        <span>      Create At : </span><span ID="createAt" style="color:black;font-size:14px"></span>
+    </p>
+</div>
+
+<div>
+    <p style="font-family:arial; font-size:13px; color:gray; text-align: center">
+        <span>      Unit Test : </span><span ID="test" style="color:black;font-size:14px"></span>
+    </p>
+</div>
+
+<div>
+    <p style="font-family:arial; font-size:13px; color:gray; text-align: center">
+        <span>      Retain Cycles Count : </span><span ID="count"  style="color:red;font-size:20px"></span>
+    </p>
+</div>
+
+<br/>
+
+<div ID="retainCycles">
+
+</div>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        $.ajax({
+
+            type: "GET",
+
+            url: "Log/log.text",
+
+            dataType: "json",
+
+            success: function (data) {
+
+                let creatAt = document.getElementById("createAt");
+                creatAt.innerText = data.date;
+
+                let test = document.getElementById("test");
+                test.innerText = data.test;
+
+                let count = document.getElementById("count");
+                count.innerText = Object.keys(data.retainCycles).length;
+
+                var html = "";
+
+                for (let key in data.retainCycles)
+                {
+                    let cycles = JSON.parse(key);
+
+                    var cycleHtml = "";
+
+                    for (var i in cycles)
+                    {
+                        var relationHtml = "";
+
+                        for (let j in cycles[i])
+                        {
+                            if (relationHtml.length != 0)
+                            {
+                                relationHtml = relationHtml + "   --->   " + cycles[i][j]
+                            }
+                            else
+                            {
+                                relationHtml = cycles[i][j];
+                            }
+                        }
+
+                        relationHtml = "<tr bgcolor='#ffffff'><td bgcolor='#f5f5f5'>" + relationHtml +"</td></tr>";
+
+                        cycleHtml = cycleHtml + relationHtml;
+                    }
+
+                    cycleHtml = "<table border='0' cellspacing='1' width='66%' bgcolor='#000000'><caption style=\"text-align:left; color: darkorange\">Reference Relations :</caption>" + cycleHtml + "</table>";
+
+                    cycleHtml = "<div style=\"color:black;font-size:14px;background-color: #f9f9f9\">" + cycleHtml + "</div>";
+
+                    let tests = data.retainCycles[key];
+
+                    var testHtml = "";
+
+                    for (var i in tests)
+                    {
+                        testHtml = testHtml + "<tr bgcolor='#ffffff'><td bgcolor='#f5f5f5'>" + tests[i] +"</td></tr>";
+                    }
+
+                    testHtml = "<table border='0' cellspacing='1' width='66%' bgcolor='#000000'><caption style=\"text-align:left; color: darkorange\">Target Tests:</caption>" + testHtml + "</table>";
+                    testHtml = "<div style=\"color:black; font-size:14px; background-color: #f9f9f9\">" + testHtml + "</div>";
+
+                    html = html + "<div style=\"background-color:#f9f9f9\">" + cycleHtml + "<br/>" + testHtml + "</div>" + "<br/><br/>";
+                }
+
+                html = "<div align='center' style=\"background-color:white\">" + html + "</div>";
+
+                var retainCycles = document.getElementById("retainCycles");
+                retainCycles.innerHTML = html;
+            }
+        });
+    });
+</script>
+</body>
+</html>

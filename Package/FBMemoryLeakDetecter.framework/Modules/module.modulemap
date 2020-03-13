@@ -1,0 +1,6 @@
+framework module FBMemoryLeakDetecter {
+  umbrella header "FBMemoryLeakDetecter.h"
+
+  export *
+  module * { export * }
+}
